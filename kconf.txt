@@ -1,0 +1,13 @@
+this software is originally from the thalassa operating system
+
+this tool prepends input within the file pointed to by IN_PATH 
+with -D for gcc usage. simple kernel config program. comments are % and are
+terminated by % this can all be changed by editing the macros COMMENT_CHAR and
+SEPERATOR. useful for configuring  kernels or software.
+
+for makefiles add this to your makefile
+
+DFLAGS = $(shell LOCATION_TO_KCONF && cat OUT_PATH)
+CFLAGS = $(CFLAGS) $(DFLAGS)
+
+
